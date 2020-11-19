@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="This webpage shows the answers to the obligatory assignment in Web Fundamentals
+        at NTNU. It talks about OS, kernel, shell, UNIX, cronjobs and scripting">
+        <link rel="icon" href="icon/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        <title>IDG1100</title>
+    </head>
+    <body>
+        <div>
+        <h1>IDG1100 OBLIG</h1>
+        <h3>Questions from answers1.txt and answers2.txt</h3>
+        </div>
+        <div class="text">
+        <p><span>Answer to question 1:</span> The Von Neuman Architecture consists of five main components: 
+            A Central Prosessing Unit, a Control Unit, a Memory Unit, Input and Output mechanisms 
+            and External Mass Storage.</p>
+        <p><span>Answer to question 2:</span> The user space is one of the components of an operating system (OS). 
+            In an OS, there is a separation between user space and kernel space where user space is the 
+            memory area allocated to running applications. Plug-ins and required libraries are loaded into the 
+            user space as well. When a document is opened and edited, that file will also be temporarily loaded 
+            into the user space. The user space contains the various programs that the OS needs to interact 
+            with the kernel space.</p>
+        <p><span>Answer to question 3:</span> The shell is a computer program that opens up an operating system’s services to a 
+            user or a program. The shell comes in two forms: Command-line interface (CLI) and graphical user 
+            interface (GUI). The CLI requires the user to be familiar with specific commands and their calling 
+            syntax. The GUI is considered as being easier to use and is based on graphics which provides for 
+            opening, closing, moving and resizing different windows.</p>
+        <p><span>Answer to question 4:</span> The shell is characterized as an application and therefore lives in the user space 
+            of an operating system.</p>
+        <p><span>Answer to question 5:</span> The main task of the shell is to manage the interaction between the user and 
+            the machine by recieving inputs from the user, interpreting that input and then giving an output from 
+            the underlying operating system. The shell runs the user’s commands, programs and scripts. 
+            It can be used to manipulate data and executing several applications under certain conditions. 
+            In short: The shell is responsible for the execution of all programs that the user requests from 
+            their terminal.</p>
+        <p><span>Answer to question 6:</span> The octal representation of a file that can be read and written only by its 
+            owner is 6 0 0.</p>     
+        <p><span>Answer to question 7:</span> The name of the special user who can access and modify every file in UNIX-systems 
+            is root administrator. (Or just root, administrator, admin, supervisor or superuser?)</p> 
+        <p><span>Answer to question 8:</span> In UNIX-systems there are three file permission classes available: 
+            User, group and others. The user is usually the one who created a file and is the owner of that file. 
+            The user can decide who else can get the permission to access and/or modify the file. 
+            ‘Group’ is members of a group of users. ‘Others’ is everyone who are not the file owner or members of the group.</p>
+        <p><span>Answer to question 9:</span> As of 2020, 71.8% of servers have UNIX-like OS.</p>
+        <p><span>Answer to question 11:</span> Access the current working directory: <code>pwd</code>.</p>
+        <p><span>Answer to question 12:</span> Rename files: <code>mv</code>. Example: <code>mv [file name] [new file name]</code>.</p>
+        <p><span>Answer to question 13:</span> Schedule the execution of programs: <code>cron</code>.</p>
+        <p><span>Answer to question 14:</span> Forcefully shut down the command with PID 123: <code>kill 123</code>.</p>
+        <p><span>Answer to question 15:</span> Access your root user: <code>sudo -s</code>.</p>
+        <p><span>Answer to question 16:</span> <code>30 * * * 0 echo "This is a cronjob scheduled to minute 30 on Sunday" >> /home/luckyliza/cronjobs/job1.txt</code>.</p>
+        <p><span>Answer to question 17:</span> <code>30 * 15 * * echo "This is a cronjob scheduled to minute 30 on day-of-month 15" >> /home/luckyliza/cronjobs/job2.txt</code>.</p>
+        <p><span>Answer to question 18:</span> <code>30 05 * 06 0-1 echo "This is a cronjob scheduled to 05:30 on every day-of-week from Sunday through Monday in June" >> /home/luckyliza/cronjobs/job3.txt</code>.</p>
+        <p><span>Answer to question 19:</span> Open new script: <code>nano script19.sh</code>. 
+            Create script: <code>#/bin/bash echo "My name is Liza and today's date is" $(date)</code>.
+            Give execution rights to the script: <code>chmod -x script19.sh</code>. 
+        Execute script: <code>./script19.sh My name is Liza and today's date is man. 16. nov 2020 16.50.34</code>.</p>
+        <p><span>Answer to question 20:</span> Open, create and chmod new script: <code>#!/bin/bash read -p "Enter two numeric values:" no1 no2 echo "You have entered the values" $no1 "and" $no2</code>.
+        Execution: <code>./script20.sh
+            Enter two numeric values:65 43
+            You have entered the values 65 and 43
+            </code>.</p>
+        <p><span>Answer to question 21:</span> Open, create and chmod new script: <code>#!/bin/bash read -p "Please state your username:" username echo $username "stored"</code>.
+        Excecution: <code>./script21.sh
+            Please state your username: SUPERKOOL_93
+            SUPERKOOL_93 stored
+            </code>.</p>
+        <p><span>Answer to question 22:</span> I'm not sure if I've understood the task correctly, but this is what I did:
+            Created the script: <code>#!/bin/bash hostname=$(hostname)
+                echo "This script is running on $hostname"
+                </code>.
+            Executed it like so: <code>./script22.sh
+                This script is running on LAPTOP-LQECTNR2
+                </code>.</p>
+        <p><span>Answer to question 23:</span> Open, create and chmod new script: <code>#!/bin/bash
+            work_dir=$(pwd)
+            echo "Your current working directory is $work_dir"
+            </code>.
+        Execution: <code>./script23.sh
+            Your current working directory is /c/Users/Bruker/scripts
+            </code>.</p>
+        <p><span>Answer to question 24: Cronjob tutorial</span></p>
+        <ol>
+            <li>Open Ubuntu and access root by typing <code>sudo -s</code>.</li>
+            <li>Create a directory for your cronjob (optional) by typing <code>mkdir [name of directory]</code>.</li>
+            <li>Access the new directory by using <code>cd</code>.</li>
+            <li>Access the cronjob-making-window (I don’t know what it’s called properly!) by typing <code>crontab -e</code>.</li>
+            <li>The cronjob has to be scheduled to every 30 minutes on today’s date and it has to print &quot;Task scheduled at&quot; + DATE.
+                Start by scheduling the task. <a href="https://crontab.guru" target="_blank">crontab.guru</a> is a good tool for that if you get confused. 
+                At the time of writing, the date is November 16th. 2020. The schedule for the cronjob is 
+                <code>30 * 16 11 *</code>. (There is no year-option in standard crons).</li>
+            <li>Type: <code>echo &quot;Task scheduled at $(date)&quot; >> [your directory navigation]/timecron.txt</code>. 
+                The .txt is the file where you redirect the output of the cronjob. You can name this file whatever you want.</li>
+            <li>Check the status of your new cronjob by typing <code>service cron status</code>.</li>
+            <li>(If your cronjob is not running, type in <code>service cron start</code>).</li>
+            <li>Execute the cronjob by typing <code>cat timecron.txt</code> (or whatever you called the .txt).</li>
+            <li>The cronjob is now displaying!</li>
+        </ol>
+        <!-- PUTT NR 25 I EN DIV??? -->
+        <p><span>Answer to question 25:</span> This one was difficult! I'm not sure if I've understood
+            the task correctly, but this is what I managed to do: This is the script:</p>
+        <ul>
+            <li><code>#!/bin/bash</code></li>
+            <li><code>echo -n "> 1: What is the capital of Russia?</code></li>
+            <li><code>> 2: Which band created the world famous classic Bohemian Rhapsody?</code></li>
+            <li><code>> 3: Who wrote Pride and Prejudice?</code></li>
+            <li><code>> Enter the corresponding number to get the answer: "</code></li>
+            <li><code>read ANSWER</code></li>
+            <li><code>case $ANSWER in</code></li>
+            <li><code>1)</code></li>
+            <li><code>echo -n "> The capital of Russia is Moscow"</code></li>
+            <li><code>;;</code></li>
+            <li><code>2)</code></li>
+            <li><code>echo -n "> The band Queen, with its charismatic frontman Freddie Mercury, created the hit Bohemian Rhapsody"</code></li>
+            <li><code>;;</code></li>
+            <li><code>3)</code></li>
+            <li><code>echo -n "> Well known author Jane Austen wrote the novel Pride and Prejudice"</code></li>
+            <li><code>;;</code></li>
+            <li><code>*)</code></li>
+            <li><code>echo -n "> There is no answer to that!"</code></li>
+            <li><code>;;</code></li>
+            <li><code>esac</code></li>
+        </ul>
+            <p>This is what it looks like when executed and I've entered the number 3:</p> 
+            <ul>
+                <li><code>./questions2.sh</code></li>
+                <li><code>> 1: What is the capital of Russia?</code></li>
+                <li><code>> 2: Which band created the world famous classic Bohemian Rhapsody?</code></li>
+                <li><code>> 3: Who wrote Pride and Prejudice?</code></li>
+                <li><code>> Enter the corresponding number to get the answer: 3</code></li>
+                <li><code>> Well known author Jane Austen wrote the novel Pride and Prejudice</code></li>
+            </ul>
+        </div>
+    </body>
+</html>

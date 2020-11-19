@@ -1,0 +1,148 @@
+6. What is the octal representation of a file that can be read and written only by its owner?
+
+- The octal representation of a file that can be read and written only by its owner is 6 0 0.
+
+7. In UNIX systems, what is the common name of the special user that can access and modify every file?
+
+- The name of the special user who can access and modify every file in UNIX-systems is root administrator. 
+(Or just root, administrator, admin, supervisor or superuser?)
+
+8. Which file permission classes are available in UNIX systems?
+
+- In UNIX-systems there are three file permission classes available: User, group and others. The user is usually the one who created a file 
+and is the owner of that file. The user can decide who else can get the permission to access and/or modify the file. 
+‘Group’ is members of a group of users. ‘Others’ is everyone who are not the file owner or members of the group.
+
+9. As of 2020, which percentage of servers have UNIX-like OS?
+
+- As of 2020, 71.8% of servers have UNIX-like OS.
+
+10. The command ssh will:
+
+11. UNIX Command: access your current working directory
+
+- pwd.
+
+12. UNIX Command: rename files (give an example)
+
+- mv. Example: mv [file name] [new file name]
+
+13. UNIX Command: schedule the execution of programs in the future
+
+- cron.
+
+14. UNIX Command: Forcefully shutdown the command with process ID 123
+
+- kill 123.
+
+15. UNIX Command: access your root user
+
+- sudo -s.
+
+16. Crontab scheduled: At minute 30 on Sunday.
+
+- 30 * * * 0 echo "This is a cronjob scheduled to minute 30 on Sunday" >> /home/luckyliza/cronjobs/job1.txt.
+
+17. Crontab scheduled: At minute 30 on day-of-month 15.
+
+- 30 * 15 * * echo "This is a cronjob scheduled to minute 30 on day-of-month 15" >> /home/luckyliza/cronjobs/job2.txt.
+
+18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.
+
+- 30 05 * 06 0-1 echo "This is a cronjob scheduled to 05:30 on every day-of-week from Sunday through Monday in June" >> 
+/home/luckyliza/cronjobs/job3.txt.
+
+19. Script: print your name and date.
+
+- Open new script: nano script19.sh. 
+Create script: #/bin/bash echo "My name is Liza and today's date is" $(date). 
+Give execution rights to the script: chmod -x script19.sh. 
+Execute script: ./script19.sh My name is Liza and today's date is man. 16. nov 2020 16.50.34.
+
+20. Script: add two numeric values, print the result
+
+- Open, create and chmod new script: #!/bin/bash read -p "Enter two numeric values:" no1 no2 echo "You have entered the values" $no1 "and" $no2.
+Execution: ./script20.sh
+            Enter two numeric values:65 43
+            You have entered the values 65 and 43
+
+21. Script: inputs username, prints “USERNAME stored”
+
+- Open, create and chmod new script: #!/bin/bash read -p "Please state your username:" username 
+                                      echo $username "stored"
+Excecution: ./script21.sh
+            Please state your username: SUPERKOOL_93
+            SUPERKOOL_93 stored
+
+22. Script: Store the output of the command “hostname” in a variable. Display “This script is running on _.” where “_” is the output of the “hostname” command.
+
+- I'm not sure if I've understood the task correctly, but this is what I did:
+Created the script: #!/bin/bash hostname=$(hostname)
+                    echo "This script is running on $hostname"
+Executed it like so: ./script22.sh
+                     This script is running on LAPTOP-LQECTNR2
+
+23. Script: Store the output of the working directory (from where the script is run) in a variable then print the variable.
+
+- Open, create and chmod new script: #!/bin/bash work_dir=$(pwd)
+                                     echo "Your current working directory is $work_dir"
+Execution: ./script23.sh
+            Your current working directory is /c/Users/Bruker/scripts
+
+24. Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at” + DATE. Cronjob is scheduled every 30 minutes on today’s date (only today).
+
+Step 1: Open Ubuntu and access root by typing «sudo -s».
+Step 2: Create a directory for your cronjob (optional) by typing «mkdir [name of directory]»
+Step 3: Access the new directory by using «cd»
+Step 4: Access the cronjob-making-window (I don’t know what it’s called properly!) by typing «crontab -e»
+Step 5: The cronjob has to be scheduled to every 30 minutes on today’s date and it has to print «Task scheduled at» + DATE.
+Start by scheduling the task. crontab.guru is a good tool for that if you get confused. At the time of writing, the date is November 16th. 2020. The schedule for the cronjob is 30 * 16 11 *. (There is no year-option in standard crons).
+Step 6: Type «echo ‘Task scheduled at $(date)’ >> [user directory]/timecron.txt». The .txt is the file where you redirect the output of the cronjob. You can name this file whatever you want.
+Step 7: As a precaution, type in «service cron status» too check the status of your cronjob.
+(Step 8: If your cronjob is not running, type in «service cron start»)
+Step 9: Execute the cronjob by typing «cat timecron.txt» (or whatever you called the .txt)
+Step 10: The cronjob is now displaying!
+
+25. Create a script that takes an input (letter or number) that will display the answer of a question. The script should when started list a menu for the user with the different questions that can be chosen and which corresponding letter the user will have to give as input to display the answer of the desired question. One of the possible inputs the user should be able to make is "q" for quitting the script. The menu should also have a default case where all the items is displayed again, or no changes is made if the user gives an invalid input. Hint: use a switch case to be able to handle the menu. Each option in the menu should lead to an echo of the answer
+
+- This one was difficult! I'm not sure if I've understood the task correctly, but this is what I managed to do: 
+        
+This is the script: 
+            
+            #!/bin/bash
+
+            echo -n "> 1: What is the capital of Russia?
+            > 2: Which band created the world famous classic Bohemian Rhapsody?
+            > 3: Who wrote Pride and Prejudice?
+            > Enter the corresponding number to get the answer: "
+            
+            read ANSWER
+            
+            case $ANSWER in
+            
+            1)
+            echo -n "> The capital of Russia is Moscow"
+            ;;
+            
+            2)
+            echo -n "> The band Queen, with its charismatic frontman Freddie Mercury, created the hit Bohemian Rhapsody"
+            ;;
+            
+            3)
+            echo -n "> Well known author Jane Austen wrote the novel Pride and Prejudice"
+            ;;
+            
+            *)
+            echo -n "> There is no answer to that!"
+            ;;
+            
+            esac 
+
+This is what it looks like when executed and I've entered the number 3: 
+
+                ./questions2.sh
+                > 1: What is the capital of Russia?
+                > 2: Which band created the world famous classic Bohemian Rhapsody?
+                > 3: Who wrote Pride and Prejudice?
+                > Enter the corresponding number to get the answer: 3 
+                > Well known author Jane Austen wrote the novel Pride and Prejudice

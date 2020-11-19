@@ -1,0 +1,29 @@
+1. What components are part of the Von Neuman Architecture
+
+- The Von Neuman Architecture consists of five main components: A Central Prosessing Unit, a Control Unit, a Memory Unit, 
+Input and Output mechanisms and External Mass Storage.
+
+2. What is user space?
+
+- The user space is one of the components of an operating system (OS). In an OS, there is a separation between user space and kernel space where 
+user space is the memory area allocated to running applications. Plug-ins and required libraries are loaded into the user space as well. 
+When a document is opened and edited, that file will also be temporarily loaded into the user space. The user space contains the various programs 
+that the OS needs to interact with the kernel space.
+
+3. What is the shell?
+
+- The shell is a computer program that opens up an operating system’s services to a user or a program. The shell comes in two forms: 
+Command-line interface (CLI) and graphical user interface (GUI). The CLI requires the user to be familiar with specific commands and their 
+calling syntax. The GUI is considered as being easier to use and is based on graphics which provides for opening, closing, moving and resizing 
+different windows.
+
+4. Where is the shell located?
+
+- The shell is characterized as an application and therefore lives in the user space of an operating system.
+
+5. What is the main task of the shell?
+
+- The main task of the shell is to manage the interaction between the user and the machine by recieving inputs from the user, interpreting that 
+input and then giving an output from the underlying operating system. The shell runs the user’s commands, programs and scripts. 
+It can be used to manipulate data and executing several applications under certain conditions. 
+In short: The shell is responsible for the execution of all programs that the user requests from their terminal.
